@@ -1,12 +1,33 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet, FlatList } from 'react-native';
 
 export default function Fish(props) {
-    // let mappedFish = props.fish.map( (fish, id) => <div className="animal" key={id}>{fish[0]} <p className="prices">{fish[1]}</p></div> );
+    // let mappedFish = props.fish.map( (fish, id) => 
+    //     <View style={styles.animal} key={id}>
+    //         <Text>{fish[0]}</Text>
+    //         <Text>{fish[1]}</Text> 
+    //     </View> 
+    // );
 
     return (
         <View>
-            <Text>Fish!</Text>
+            <FlatList
+                data={props.fish} // [ ['fish', 200], ...]
+                renderItem={({ fish, index }) => 
+                    <View key={index}>
+                        <Text>{props.fish[index][0]}</Text>
+                        <Text>{props.fish[index][1]}</Text>
+                    </View>}
+                // style={styles.animal}
+                extraData={props.fish}
+            />
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    animal: {
+        display: 'flex',
+        justifyContent: 'space-around'
+    }
+})
