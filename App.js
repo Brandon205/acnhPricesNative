@@ -21,8 +21,7 @@ export default function App() {
 
   let filteredList = "";
   let handleFilterChange = (text) => {
-    console.log(text);
-    if (selected === "All Prices") { //set the props for the thing to render to the filtered list
+    if (selected === "All Prices") { // set the props for the thing to render to the filtered list
       filteredList = allArray.filter(animal => animal[0].toLocaleLowerCase().includes(text.toLocaleLowerCase()));
       setBugsAndFish(filteredList);
     } else if (selected === "Fish") {
@@ -76,7 +75,7 @@ const styles = StyleSheet.create({
   },
   buttons: {
     width: "100%",
-    height: "20%",
+    height: "10%",
     display: "flex",
     flexDirection: "row",
     alignItems: "center"

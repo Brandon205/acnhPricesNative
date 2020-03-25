@@ -15,11 +15,11 @@ export default function Fish(props) {
                 data={props.fish} // [ ['fish', 200], ...]
                 renderItem={({ fish, index }) => 
                     <View key={index}>
-                        <Text>{props.fish[index][0]}</Text>
+                        <Text key={index}>{props.fish[index][0]}</Text>
                         <Text>{props.fish[index][1]}</Text>
                     </View>}
                 // style={styles.animal}
-                extraData={props.fish}
+                keyExtractor={(fish, index) => 'index' + index}
             />
         </View>
     )
