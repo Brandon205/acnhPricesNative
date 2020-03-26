@@ -14,9 +14,9 @@ export default function Fish(props) {
             <FlatList
                 data={props.fish} // [ ['fish', 200], ...]
                 renderItem={({ fish, index }) => 
-                    <View key={index}>
-                        <Text key={index}>{props.fish[index][0]}</Text>
-                        <Text>{props.fish[index][1]}</Text>
+                    <View style={styles.animal} key={index}>
+                        <Text style={styles.words}>{props.fish[index][0]}</Text>
+                        <Text style={styles.words}>{props.fish[index][1]}</Text>
                     </View>}
                 keyExtractor={(fish, index) => index}
             />
@@ -26,7 +26,14 @@ export default function Fish(props) {
 
 const styles = StyleSheet.create({
     animal: {
+        fontSize: 20,
         display: 'flex',
-        justifyContent: 'space-around'
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        width: '100%'
+    },
+    words: {
+        fontSize: 25,
+        padding: 10
     }
 })

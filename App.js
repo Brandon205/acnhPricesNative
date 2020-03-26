@@ -52,13 +52,13 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Animal Crossing New Horizons Prices</Text>
+      <TextInput style={styles.input} autoCompleteType="off" autoCorrect={false} onChangeText={(text) => handleFilterChange(text)} value={filterValue} placeholder="Search Here" />
+      {content}
       <View style={styles.buttons}>
         <TouchableOpacity style={selected === 'Fish' ? styles.tabBkg : styles.tabs} onPress={() => setSelected('Fish')}><Text>Fish</Text></TouchableOpacity>
         <TouchableOpacity style={selected === 'All Prices' ? styles.tabBkg : styles.tabs} onPress={() => setSelected('All Prices')}><Text>All Prices</Text></TouchableOpacity>
         <TouchableOpacity style={selected === 'Bugs' ? styles.tabBkg : styles.tabs} onPress={() => setSelected('Bugs')}><Text>Bugs</Text></TouchableOpacity>
       </View>
-      <TextInput autoCompleteType="off" autoCorrect={false} onChangeText={(text) => handleFilterChange(text)} value={filterValue} placeholder="Search Here" />
-      {content}
     </View>
   );
 };
@@ -66,16 +66,23 @@ export default function App() {
 const styles = StyleSheet.create({
   header: {
     textAlign: "center",
+    backgroundColor: '#FDFDEB',
     fontSize: 20,
-    marginTop: 45
+    marginTop: 45,
+    width: '100%',
+    height: '5%'
   },
   container: {
     textAlign: "center",
-    flex: 1
+    flex: 1,
+    display: 'flex',
+    alignItems: 'center'
   },
   buttons: {
+    position: "absolute",
+    bottom: 0,
     width: "100%",
-    height: "10%",
+    height: "7%",
     display: "flex",
     flexDirection: "row",
     alignItems: "center"
@@ -87,7 +94,7 @@ const styles = StyleSheet.create({
     color: "#FDE46A",
     backgroundColor: "#C52D28",
     width: "33%",
-    height: "80%",
+    height: "100%",
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center'
@@ -95,12 +102,16 @@ const styles = StyleSheet.create({
   tabBkg: {
     backgroundColor: "rgb(177, 13, 7)",
     width: "33%",
-    height: "95%",
+    height: "100%",
     fontSize: 20,
     fontWeight: "bold",
     color: "#FDE46A",
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  input: {
+    fontSize: 25,
+    marginTop: 10
   }
 });
