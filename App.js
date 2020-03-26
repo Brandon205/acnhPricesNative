@@ -88,8 +88,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#C52D28",
     width: "33%",
     height: "80%",
-    borderColor: "black",
-    borderRadius: 5,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center'
@@ -101,9 +99,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     color: "#FDE46A",
-    borderWidth: 1,
-    borderColor: "black",
-    borderRadius: 5,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center'

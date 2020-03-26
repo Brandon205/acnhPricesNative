@@ -18,8 +18,7 @@ export default function Fish(props) {
                         <Text key={index}>{props.fish[index][0]}</Text>
                         <Text>{props.fish[index][1]}</Text>
                     </View>}
-                // style={styles.animal}
-                keyExtractor={(fish, index) => 'index' + index}
+                keyExtractor={(fish, index) => index}
             />
         </View>
     )
